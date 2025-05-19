@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Ovo } from "next/font/google";
-
 const ovo = Ovo({
   subsets: ["latin"],
   weight: ["400"],
