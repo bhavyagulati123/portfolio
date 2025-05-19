@@ -1,7 +1,7 @@
 import { assets } from "@/assets/assets";
 import React, { useState } from "react";
 import Image from "next/image";
-const Contact = () => {
+const Contact = ({isdarkmode,setIsdarkmode}) => {
   const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
@@ -29,7 +29,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className={`w-full px-[12%] py-10 scroll-mt-20 bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto]`}
+      className={`w-full px-[12%] py-10 scroll-mt-20 bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto] dark:bg-none `}
     >
       <h4 className={`font-[var(--font-ovo)] text-center mb-2 text-lg `}>
         Connect with me
@@ -44,7 +44,7 @@ const Contact = () => {
       <form className="max-w-2xl mx-auto" action="" onSubmit={onSubmit}>
         <div className="grid grid-cols-auto gap-6 mt-10 mb-8">
           <input
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="dark:placeholder:text-gray-600 flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
             type="text"
             name="name"
             placeholder="Enter your name"
@@ -52,7 +52,7 @@ const Contact = () => {
           />
           <input
             type="email"
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className=" dark:placeholder:text-gray-600 flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
             name="email"
             id=""
             placeholder="Enter your Email"
@@ -60,7 +60,7 @@ const Contact = () => {
           />
         </div>
         <textarea
-          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6"
+          className="dark:placeholder:text-gray-600 w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6"
           name="message"
           id=""
           rows="6"
@@ -68,11 +68,11 @@ const Contact = () => {
           required
         ></textarea>
         <button
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"
+          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto dark:border-2 hover:bg-black duration-500 dark:bg-transparent dark:border-gray-500 dark:hover:bg-darkHover"
           type="submit"
         >
-          Submit now{" "}
-          <Image src={assets.right_arrow_white} className="w-5" alt="" />{" "}
+          Submit now
+          <Image src={isdarkmode?assets.right_arrow: assets.right_arrow_white} className="w-5" alt="" />
         </button>
         <p className="mt-4">{result}</p>
       </form>

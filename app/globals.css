@@ -16,6 +16,7 @@
   --font-outfit: 'Outfit', sans-serif;
   --font-ovo: 'Ovo', serif;
 }
+@custom-variant dark (&:where(.dark, .dark *));
 @layer utilities {
   .grid-cols-auto {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

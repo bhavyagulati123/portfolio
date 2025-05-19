@@ -3,7 +3,10 @@ import Image from "next/image";
 import { assets, serviceData } from "@/assets/assets";
 const Services = () => {
   return (
-    <div id="services" className="w-full px-[12%] py-10 scroll-mt-20">
+    <div
+      id="services"
+      className="w-full px-[12%] py-10 scroll-mt-20 dark:text-white"
+    >
       <h4 className={`font-[var(--font-ovo)] text-center mb-2 text-lg `}>
         What I offer
       </h4>
@@ -19,11 +22,11 @@ const Services = () => {
           return (
             <div
               key={index}
-              className=" border border-gray-400 rounded-lg px-8 py-12 hover:shadow-[var(--shadow-black)] cursor-pointer hover:bg-[var(--color-lightHover)] hover:-transalate-y-1 duration-500"
+              className=" border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-[var(--color-lightHover)] hover:-transalate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white"
             >
               <Image src={icon} alt="" className="w-10" />
-              <h3 className="text-lg my-4 text-gray-700">{title}</h3>
-              <p className="text-lg my-4 text-gray-600 leading-5">
+              <h3 className="text-lg my-4 text-gray-700 dark:text-white ">{title}</h3>
+              <p className="text-lg my-4 text-gray-600 leading-5 dark:text-white/80">
                 {description}
               </p>
               <a href={link} className="flex items-center gap-2 text-sm mt-5">
