@@ -1,29 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Ovo&display=swap');
-
-@import "tailwindcss";
-
-@theme {
-  /* Colors */
-  --color-lightHover: #fcf4ff;
-  --color-darkHover: #2a004a;
-  --color-darkTheme: #11001f;
-
-  /* Box shadows */
-  --shadow-black: 4px 4px 0 #000;
-  --shadow-white: 4px 4px 0 #fff;
-
-  /* Fonts */
-  --font-outfit: 'Outfit', sans-serif;
-  --font-ovo: 'Ovo', serif;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-@custom-variant dark (&:where(.dark, .dark *));
-@layer utilities {
-  .grid-cols-auto {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-/* Optional: set default fonts using the CSS variables */
 
-/* body {
-  font-family: var(--font-outfit);
-} */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0A0A0A;
+}
+
+::selection {
+  background: #00FF88;
+  color: #0A0A0A;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0,255,136,0.15); }
+  50% { box-shadow: 0 0 25px rgba(0,255,136,0.25); }
+}
+
+@keyframes scanline {
+  0% { top: -5%; }
+  100% { top: 105%; }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,255,136,0.15);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,255,136,0.6);
+}

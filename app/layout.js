@@ -1,31 +1,21 @@
-import { Outfit, Ovo } from "next/font/google";
+import { Fira_Code } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const firaCode = Fira_Code({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-outfit",
-});
-
-const ovo = Ovo({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-ovo",
+  display: "swap",
 });
 
 export const metadata = {
-  title: "Portfolio-Bhavya Gulati",
-  description: "",
+  title: "Bhavya Gulati — Portfolio",
+  description: "Full-Stack Engineer | Backend / Full-Stack Roles",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth ">
-      <body
-        className={` ${outfit.className} antialiased leading-8 overflow-x-hidden dark:bg-darkTheme dark:text-white`}
-      >
-        {children}
-      </body>
+    <html lang="en" className={firaCode.className}>
+      <body>{children}</body>
     </html>
   );
 }
