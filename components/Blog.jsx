@@ -12,7 +12,7 @@ function BlogEntry({ blog, index, visible }) {
 
   return (
     <a
-      href="#"
+      href={`/blog/${blog.slug}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -28,7 +28,7 @@ function BlogEntry({ blog, index, visible }) {
         fontFamily: MONO,
         opacity: visible ? 1 : 0,
         transform: visible ? "translateX(0)" : "translateX(-12px)",
-        transition: `all 0.5s ${0.3 + index * 0.12}s, background 0.2s, border-color 0.2s`,
+        transition: `all 0.3s ${0.15 + index * 0.06}s, background 0.15s, border-color 0.15s`,
       }}
     >
       <span style={{ fontSize: "0.7rem", color: C.dim }}>{blog.date}</span>

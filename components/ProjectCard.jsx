@@ -21,7 +21,7 @@ export default function ProjectCard({ project, index, visible }) {
         cursor: "pointer",
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(12px)",
-        transition: `all 0.5s ${0.3 + index * 0.12}s, background 0.2s, border-color 0.2s`,
+        transition: `all 0.3s ${0.15 + index * 0.06}s, background 0.15s, border-color 0.15s`,
       }}
     >
       {/* File listing row */}

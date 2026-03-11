@@ -39,7 +39,7 @@ export default function Projects() {
           display: "grid",
           gridTemplateColumns: "120px 80px 1fr",
           opacity: showContent && visible ? 1 : 0,
-          transition: "opacity 0.4s 0.2s",
+          transition: "opacity 0.25s 0.1s",
         }}
       >
         <span>permissions</span>

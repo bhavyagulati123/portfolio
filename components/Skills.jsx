@@ -48,7 +48,7 @@ export default function Skills() {
           lineHeight: 2.2,
           opacity: showContent && visible ? 1 : 0,
           transform: showContent && visible ? "translateY(0)" : "translateY(16px)",
-          transition: "all 0.6s 0.2s",
+          transition: "all 0.35s 0.1s",
         }}
       >
         <div style={{ color: C.dim }}>{"{"}</div>
@@ -84,7 +84,7 @@ export default function Skills() {
             key={s.name}
             style={{
               opacity: showContent && visible ? 1 : 0,
-              transition: `opacity 0.4s ${0.4 + i * 0.1}s`,
+              transition: `opacity 0.25s ${0.2 + i * 0.05}s`,
             }}
           >
             <div
@@ -113,7 +113,7 @@ export default function Skills() {
                   background: `linear-gradient(90deg, ${C.green}, ${C.cyan})`,
                   borderRadius: 2,
                   width: showContent && visible ? `${s.pct}%` : "0%",
-                  transition: `width 1s cubic-bezier(0.22,1,0.36,1) ${0.6 + i * 0.1}s`,
+                  transition: `width 0.6s cubic-bezier(0.22,1,0.36,1) ${0.3 + i * 0.05}s`,
                 }}
               />
             </div>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export function useTypewriter(text, speed = 30, startDelay = 0, trigger = true) {
+export function useTypewriter(text, speed = 18, startDelay = 0, trigger = true) {
   const [displayed, setDisplayed] = useState("");
   const [done, setDone] = useState(false);
 

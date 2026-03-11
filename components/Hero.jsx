@@ -29,8 +29,8 @@ export default function Hero() {
     BOOT_LINES.forEach((_, i) => {
       setTimeout(() => setVisibleLines(i + 1), BOOT_LINES[i].delay);
     });
-    setTimeout(() => setShowAscii(true), 1200);
-    setTimeout(() => setShowContent(true), 1800);
+    setTimeout(() => setShowAscii(true), 700);
+    setTimeout(() => setShowContent(true), 1100);
   }, []);
 
   return (
@@ -65,7 +65,7 @@ export default function Hero() {
           lineHeight: 1.25,
           opacity: showAscii ? 1 : 0,
           transform: showAscii ? "translateY(0)" : "translateY(20px)",
-          transition: "all 0.8s cubic-bezier(0.22,1,0.36,1)",
+          transition: "all 0.5s cubic-bezier(0.22,1,0.36,1)",
           textShadow: "0 0 20px rgba(0,255,136,0.3)",
           marginBottom: "2.5rem",
         }}
@@ -78,7 +78,7 @@ export default function Hero() {
         style={{
           opacity: showContent ? 1 : 0,
           transform: showContent ? "translateY(0)" : "translateY(20px)",
-          transition: "all 0.8s cubic-bezier(0.22,1,0.36,1)",
+          transition: "all 0.5s cubic-bezier(0.22,1,0.36,1)",
         }}
       >
         <div style={{ fontSize: "0.82rem", lineHeight: 2.2, fontFamily: MONO }}>

@@ -95,7 +95,7 @@ function SocialLink({ link, index, visible }) {
         fontFamily: MONO,
         transition: "all 0.2s",
         opacity: visible ? 1 : 0,
-        animation: visible ? `fadeIn 0.4s ${0.5 + index * 0.1}s both` : "none",
+        animation: visible ? `fadeIn 0.25s ${0.25 + index * 0.06}s both` : "none",
       }}
     >
       <span
@@ -132,13 +132,35 @@ export default function Contact() {
 
   const handleChange = (field, value) => setForm((p) => ({ ...p, [field]: value }));
 
-  const handleSubmit = () => {
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async () => {
     if (!form.name || !form.email || !form.message) return;
     setSending(true);
-    setTimeout(() => {
+    setError(null);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          name: form.name,
+          email: form.email,
+          subject: form.subject || `Portfolio message from ${form.name}`,
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError("Failed to send. Try again.");
+      }
+    } catch {
+      setError("Network error. Try again.");
+    } finally {
       setSending(false);
-      setSubmitted(true);
-    }, 1500);
+    }
   };
 
   const isReady = form.name && form.email && form.message && !sending;
@@ -167,7 +189,7 @@ export default function Contact() {
           gap: "2rem",
           opacity: showContent && visible ? 1 : 0,
           transform: showContent && visible ? "translateY(0)" : "translateY(16px)",
-          transition: "all 0.6s 0.3s",
+          transition: "all 0.35s 0.15s",
         }}
       >
         {/* Left — Contact Form */}
@@ -383,6 +405,19 @@ export default function Contact() {
                   )}
                 </button>
 
+                {error && (
+                  <div
+                    style={{
+                      marginTop: "0.8rem",
+                      fontFamily: MONO,
+                      fontSize: "0.72rem",
+                      color: C.red,
+                    }}
+                  >
+                    {error}
+                  </div>
+                )}
+
                 {(form.name || form.email) && (
                   <div
                     style={{
@@ -498,7 +533,8 @@ export default function Contact() {
 
           {/* Resume download */}
           <a
-            href="/resume.pdf"
+            href="/BHAVYA_GULATI_Resume.pdf"
+            download="BHAVYA_GULATI_Resume.pdf"
             style={{
               display: "flex",
               alignItems: "center",

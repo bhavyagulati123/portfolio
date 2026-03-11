@@ -41,7 +41,7 @@ export default function Experience() {
             marginBottom: "1.5rem",
             opacity: showContent && visible ? 1 : 0,
             transform: showContent && visible ? "translateY(0)" : "translateY(16px)",
-            transition: `all 0.6s ${0.2 + ei * 0.15}s`,
+            transition: `all 0.35s ${0.1 + ei * 0.08}s`,
           }}
         >
           <div
@@ -76,7 +76,7 @@ export default function Experience() {
                   paddingLeft: 16,
                   position: "relative",
                   opacity: showContent && visible ? 1 : 0,
-                  transition: `opacity 0.4s ${0.5 + i * 0.08}s`,
+                  transition: `opacity 0.25s ${0.25 + i * 0.04}s`,
                 }}
               >
                 <span style={{ position: "absolute", left: 0, color: C.green }}>▸</span>
@@ -105,7 +105,7 @@ export default function Experience() {
               background: i === 0 ? C.greenUltra : "transparent",
               borderRadius: "0 4px 4px 0",
               opacity: showContent && visible ? 1 : 0,
-              transition: `opacity 0.4s ${0.8 + i * 0.1}s`,
+              transition: `opacity 0.25s ${0.4 + i * 0.05}s`,
             }}
           >
             <div>
@@ -168,7 +168,7 @@ export default function Experience() {
               paddingLeft: 16,
               position: "relative",
               opacity: showContent && visible ? 1 : 0,
-              transition: `opacity 0.4s ${1 + i * 0.1}s`,
+              transition: `opacity 0.25s ${0.5 + i * 0.05}s`,
             }}
           >
             <span style={{ position: "absolute", left: 0, color: C.amber }}>★</span>

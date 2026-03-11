@@ -9,7 +9,7 @@ import Cursor from "./Cursor";
 
 export default function SectionHeader({ command, path = "~", onDone }) {
   const [ref, visible] = useInView();
-  const [typed, done] = useTypewriter(command, 40, 200, visible);
+  const [typed, done] = useTypewriter(command, 22, 100, visible);
 
   useEffect(() => {
     if (done && onDone) onDone();
